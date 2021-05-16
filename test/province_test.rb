@@ -50,5 +50,11 @@ class ProvinceTest < Minitest::Test
     assert_equal(-26, @asia.shortfall)
     assert_equal(-10, @asia.profit)
   end
+
+  # NoMethodError thrown because of data type
+  def test_province_empty_demand_string
+    @asia.demand = ""
+    assert_equal(@asia.shortfall.nan?, @asia.shortfall)
+  end
   
 end
