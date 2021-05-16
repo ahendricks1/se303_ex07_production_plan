@@ -55,6 +55,7 @@ class ProvinceTest < Minitest::Test
   def test_province_empty_demand_string
     @asia.demand = ""
     assert_equal(@asia.shortfall.nan?, @asia.shortfall)
+    assert_equal(@assert_equal.profit.nan?, @asia.profit)
   end
   
 end
