@@ -57,5 +57,17 @@ class ProvinceTest < Minitest::Test
     assert_equal(@asia.shortfall.nan?, @asia.shortfall)
     assert_equal(@assert_equal.profit.nan?, @asia.profit)
   end
+
+  # NoMethodError thrown because of data type
+  def test_province_string_for_producers
+    data = {
+      name: "String producers",
+      producers: "",
+      demand: 30,
+      price: 20
+    }
+    prov = Province.new(data)
+    assert_equal(0, @asia.shortfall)
+  end
   
 end
